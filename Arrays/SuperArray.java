@@ -13,14 +13,13 @@ public class SuperArray<T> {
     private ArrayList<SuperArray<T>> atrSuperArrays;
 
     // Constructors:
-    public SuperArray(){
-        atrSuperArrays = new ArrayList<>();
-    }
+    public SuperArray(){ atrSuperArrays = new ArrayList<>(); }
 
     public SuperArray(int prmId, T prmObject)
     {
         atrId = prmId;
         atrObject = prmObject;
+        atrSuperArrays = new ArrayList<>();
     }
 
     // Methods 'getter':

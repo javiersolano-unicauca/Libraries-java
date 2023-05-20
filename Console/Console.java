@@ -6,9 +6,6 @@ import java.util.Scanner;
 */
 
 public class Console {
-    
-    // Properties of class:
-    private static Scanner atrInput = new Scanner(System.in);
 
     /**
      *  Metodo para imprimir una cadena en consola.
@@ -58,12 +55,15 @@ public class Console {
      *  @param prmDescription Recibe la descripcion de la entrada que se solicita.
      * 
      *  @return La entrada ingresada por el usuario.
+     *  @throws MathException En el caso de que el dato ingresado por el usuario no corresponde a un numero entero.
      */
     public static int integerInput(String prmDescription) throws MathException
     {
         printMessage(prmDescription+":");
+        Scanner objScanner = new Scanner(System.in);
+
         try{
-            return atrInput.nextInt();
+            return objScanner.nextInt();
         }catch(InputMismatchException e){
             throw new MathException(MathException.NOT_INTEGER);
         }
@@ -75,12 +75,15 @@ public class Console {
      *  @param prmDescription Recibe la descripcion de la entrada que se solicita.
      * 
      *  @return La entrada ingresada por el usuario.
+     *  @throws MathException En el caso de que el dato ingresado por el usuario no corresponde a un numero real
      */
     public static double doubleInput(String prmDescription) throws MathException
     {
         printMessage(prmDescription+":");
+        Scanner objScanner = new Scanner(System.in);
+
         try{
-            return atrInput.nextDouble();
+            return objScanner.nextDouble();
         }catch(InputMismatchException e){
             throw new MathException(MathException.NOT_DOUBLE);
         }
