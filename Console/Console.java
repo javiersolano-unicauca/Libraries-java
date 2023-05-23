@@ -1,5 +1,8 @@
+package Libraries.Console;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import Libraries.Exceptions.MathException;
 
 /**
 *  @author javiersolanop
@@ -47,6 +50,19 @@ public class Console {
     public static void titlePrint(String prmTitle)
     {
         printMessage("----- "+prmTitle+" -----");
+    }
+    
+    /**
+     *  Metodo para recibir entradas de tipo cadena por consola.
+     * 
+     *  @param prmDescription Recibe la descripcion de la entrada que se solicita.
+     * 
+     *  @return La entrada ingresada por el usuario.
+     */
+    public static String input(String prmDescription)
+    {
+        printMessage(prmDescription+":");
+        return new Scanner(System.in).nextLine();
     }
 
     /**

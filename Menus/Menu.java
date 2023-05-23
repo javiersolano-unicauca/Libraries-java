@@ -1,3 +1,8 @@
+package Libraries.Menus;
+
+import Libraries.Console.Console;
+import Libraries.Exceptions.MathException;
+import Libraries.Exceptions.MenuException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -90,7 +95,7 @@ public class Menu {
      */
     public int receiveOption()
     {
-        int varOpcion = 10;
+        int varOpcion = 0;
 
         do{
             try{
@@ -98,7 +103,7 @@ public class Menu {
                 validateOption(varOpcion);
                 break;
             
-            }catch(Exception e){
+            }catch(MathException | MenuException e){
                 Console.printMessage("Error: "+e.getMessage());
             }
         }while(true);

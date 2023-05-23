@@ -1,3 +1,5 @@
+package Libraries.Exceptions;
+
 /**
 *  @author javiersolanop
 */

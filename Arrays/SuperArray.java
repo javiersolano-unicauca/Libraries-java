@@ -1,7 +1,10 @@
+package Libraries.Arrays;
+
 import java.util.ArrayList;
 
 /**
 *  @author javiersolanop
+ * @param <T> Datatype
 */
 
 public class SuperArray<T> {
