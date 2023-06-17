@@ -2,7 +2,7 @@ package Libraries.Console;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// import Libraries.Exceptions.MathException;
+import Libraries.Exceptions.MathException;
 
 /**
 *  @author javiersolanop

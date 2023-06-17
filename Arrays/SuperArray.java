@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
 *  @author javiersolanop
 *  @param K recibe el tipo de clave
-   @param O recibe el tipo de objeto que almacena
+*  @param O recibe el tipo de objeto que almacena
 */
 
 public class SuperArray<K, O> {
