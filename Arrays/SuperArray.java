@@ -4,108 +4,93 @@ import java.util.ArrayList;
 
 /**
 *  @author javiersolanop
- * @param <T> Datatype
+*  @param K recibe el tipo de clave
+   @param O recibe el tipo de objeto que almacena
 */
 
-public class SuperArray<T> {
+public class SuperArray<K, O> {
 
     // Properties:
-    private int atrId;
-    private T atrObject;
-    private int atrIndexOfArray;
-    private ArrayList<SuperArray<T>> atrSuperArrays;
+    private K atrKey;
+    private O atrObject;
+    private int atrIndex;
+    private ArrayList<SuperArray<K, O>> atrObjects;
 
     // Constructors:
-    public SuperArray(){ atrSuperArrays = new ArrayList<>(); }
-
-    public SuperArray(int prmId, T prmObject)
-    {
-        atrId = prmId;
-        atrObject = prmObject;
-        atrSuperArrays = new ArrayList<>();
+    public SuperArray()
+    { 
+        atrIndex = 0;
+        atrObjects = new ArrayList<>(); 
     }
 
-    // Methods 'getter':
-    public int getId() { return atrId; }
-
-    public T getObject() { return atrObject; }
-
-    // Methods:
+    private SuperArray(K prmKey, O prmObject, int prmIndex)
+    {
+        atrKey = prmKey;
+        atrObject = prmObject;
+        atrIndex = prmIndex;
+        atrObjects = null;
+    }
     
     /**
-     *  Metodo para obtener la cantidad de objetos del arreglo.
+     *  Metodo para validar si el arreglo esta vacio.
      * 
-     *  @return La cantidad
+     *  @return 'true' si esta vacio. 'false' si no.
      */
-    public int size() { return atrSuperArrays.size(); }
-
+    public boolean isEmpty(){ return (atrIndex == 0); }
 
     /**
-     *  Metodo para saber si el arreglo no contiene objetos.
+     *  Metodo para obtener el tamanio del arreglo.
      * 
-     *  @return 'true' si no contiene objetos. 'false' si contiene.
+     *  @return el tamanio.
      */
-    public boolean isEmpty(){ return atrSuperArrays.isEmpty(); }
+    public int size(){ return atrIndex; }
 
     /**
-     *  Metodo para buscar un objeto en el arreglo.
+     *  Metodo para validar si existe un objeto especifico en el arreglo.
      * 
-     *  @param prmId Recibe el 'id' por el que se filtra el objeto.
-     * 
-     *  @return El objeto, si existe en el arreglo. 'null' si no existe.
-     */
-    public T searchAndGet(int prmId)
-    {
-        if(!isEmpty()){
-
-            for(SuperArray<T> obj: atrSuperArrays){
-
-                if(obj.atrId == prmId)
-                    return obj.atrObject;
-            }
-        }
-        return null;
-    }
-
-    /**
-     *  Metodo para validar si existe un objeto en el arreglo. 
-     * 
-     *  @param prmId Recibe el 'id' por el que se filtra el objeto.
-     * 
+     *  @param prmKey La clave del objeto.
      *  @return 'true' si existe. 'false' si no.
      */
-    public boolean validateExistence(int prmId)
+    public boolean validateExistence(K prmKey)
     {
-        if(!isEmpty()){
+        for(SuperArray<K, O> obj: atrObjects){
+            if(obj.atrKey == prmKey)
+                return true;
+        }
+        return false;
+    }
 
-            for(SuperArray<T> obj: atrSuperArrays){
-
-                if(obj.atrId == prmId)
-                    return true;
+    /**
+     *  Metodo para adicionar un objeto al arreglo.
+     * 
+     *  @param prmKey recibe la clave del objeto en el arreglo.
+     *  @param prmObject recibe el objeto.
+     *  @return 'true' si se adiciona. 'false' si ya existe.
+     */
+    public boolean add(K prmKey, O prmObject)
+    {
+        if(!validateExistence(prmKey)){
+            if(atrObjects.add(new SuperArray<>(prmKey, prmObject, atrIndex))){
+                atrIndex ++;
+                return true;
             }
         }
         return false;
     }
 
     /**
-     *  Metodo para agregar un objeto al arreglo.
+     *  Metodo para obtener un objeto especifico del arrelgo.
      * 
-     *  @param prmId Recibe el 'id' como el identificador del objeto en el arreglo.
-     *  @param prmObject Recibe el objeto.
-     * 
-     *  @return 'true' si se agrega. 'false' si ya existe un objeto con ese identificador.
+     *  @param prmKey recibe la clave del objeto.
+     *  @return El objeto, si existe. De lo contrario null.
      */
-    public boolean addObject(int prmId, T prmObject)
+    public O get(K prmKey)
     {
-        if(!validateExistence(prmId)){
-
-            SuperArray<T> objSuperArray = new SuperArray<>(prmId, prmObject);
-            objSuperArray.atrIndexOfArray = atrSuperArrays.size();
-            atrSuperArrays.add(objSuperArray);
-
-            return true;
+        for(SuperArray<K, O> obj: atrObjects){
+            if(obj.atrKey == prmKey)
+                return atrObjects.get(obj.atrIndex).atrObject;
         }
-        return false;
+        return null;
     }
 
     /**
@@ -113,59 +98,43 @@ public class SuperArray<T> {
      * 
      *  @return El arreglo de objetos.
      */
-    public ArrayList<T> getObjects()
+    public ArrayList<O> getAll()
     {
-        ArrayList<T> arrObjects = new ArrayList<>();
+        ArrayList<O> arr = new ArrayList<>();
 
-        if(!isEmpty()){
-
-            for(SuperArray<T> obj: atrSuperArrays)
-                arrObjects.add(obj.atrObject);
-        }
-        return arrObjects;
+        for(SuperArray<K, O> obj: atrObjects)
+            arr.add(obj.atrObject);
+        return arr;
     }
 
     /**
-     *  Metodo para actualizar un objeto del arreglo.
+     *  Metodo para actualizar un objeto especifico del arreglo.
      * 
-     *  @param prmId Recibe el 'id' por el que se filtra el objeto.
-     *  @param prmObject Recibe el objeto nuevo.
-     * 
-     *  @return 'true' si actualiza el objeto. 'false' si no existe un objeto con ese 'id'.
+     *  @param prmKey recibe la clave del objeto.
+     *  @param prmObject recibe el nuevo objeto.
+     *  @return 'true' si se actualiza. 'false' si no existe.
      */
-    public boolean updateObject(int prmId, T prmObject)
+    public boolean update(K prmKey, O prmObject)
     {
-        if(!isEmpty()){
-
-            for(SuperArray<T> obj: atrSuperArrays){
-
-                if(obj.atrId == prmId){
-                    obj.atrObject = prmObject;
-                    return true;
-                }
-            }
+        for(SuperArray<K, O> obj: atrObjects){
+            if(obj.atrKey == prmKey)
+                atrObjects.set(obj.atrIndex, new SuperArray<>(prmKey, prmObject, obj.atrIndex));
+                return true;
         }
         return false;
     }
 
     /**
-     *  Metodo para eliminar un objeto del arreglo.
+     *  Metodo para remover un objeto especifico del arreglo.
      * 
-     *  @param prmId Recibe el 'id' por el que se filtra el objeto.
-     * 
-     *  @return 'true' si se elimina. 'false' si no existe el objeto.
+     *  @param prmKey recibe la clave del objeto.
+     *  @return 'true' si lo remueve. 'false' si no existe.
      */
-    public boolean deleteObject(int prmId)
+    public boolean remove(K prmKey)
     {
-        if(!isEmpty()){
-
-            for(SuperArray<T> obj: atrSuperArrays){
-
-                if(obj.atrId == prmId){
-                    atrSuperArrays.remove(obj.atrIndexOfArray);
-                    return true;
-                }
-            }
+        for(SuperArray<K, O> obj: atrObjects){
+            if(obj.atrKey == prmKey)
+               return atrObjects.remove(obj);
         }
         return false;
     }
