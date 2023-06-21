@@ -1,4 +1,4 @@
-package Libraries.Console;
+package Libraries.Consoles;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -7,7 +7,6 @@ import Libraries.Exceptions.MathException;
 /**
 *  @author javiersolanop
 */
-
 public class Console {
 
     /**
@@ -105,3 +104,5 @@ public class Console {
         }
     }
 }
+
+
