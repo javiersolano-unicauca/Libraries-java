@@ -1,9 +1,8 @@
-package Libraries.Exceptions;
+ package Libraries.Exceptions;
 
 /**
 *  @author javiersolanop
 */
-
 public class MathException extends Exception {
 
     // Properties of object:

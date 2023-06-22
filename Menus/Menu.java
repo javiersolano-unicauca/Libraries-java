@@ -1,6 +1,6 @@
 package Libraries.Menus;
 
-import Libraries.Console.Console;
+import Libraries.Consoles.Console;
 import Libraries.Exceptions.MathException;
 import Libraries.Exceptions.MenuException;
 import java.io.IOException;
@@ -75,7 +75,7 @@ public class Menu {
      *  Entonces se limpia la consola.
      * 
      *  @param prmOption Recibe la opcion
-     *  @return 'true' si la opcion coresponde a la de salida. 'false' si no.
+     *  @return 'true' si la opcion corresponde a la de salida. 'false' si no.
      *  @throws IOException En el caso de que surga al tratar de limpiar la consola.
      *  @throws InterruptedException En el caso de que surga al tratar de ejecutar el comando de limpieza.
      */
