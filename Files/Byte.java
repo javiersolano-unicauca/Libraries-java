@@ -14,6 +14,7 @@ public class Byte {
      */
     public static String parseByteToString(byte[] prmBytes)
     {
+<<<<<<< HEAD
         String varChain = "";
         
         for(byte b: prmBytes){
@@ -22,6 +23,9 @@ public class Byte {
                 varChain += (char)b;
         }
         return varChain;
+=======
+        return new String(prmBytes);
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
     }
 
     /**

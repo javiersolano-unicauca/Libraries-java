@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import Libraries.Arrays.ChainOfCharacter.ChainOfCharacter;
 import Libraries.Arrays.SuperArray.Element;
 import Libraries.Arrays.SuperArray.SuperArray;
+<<<<<<< HEAD
 import Libraries.Consoles.Console;
+=======
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
 
 /**
 *  @author javiersolanop
@@ -19,8 +22,13 @@ public class JSON  {
     public JSON(){ atrJSON = new SuperArray<>(); }
 
     // Methods of object:
+<<<<<<< HEAD
     
      /**
+=======
+
+    /**
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
      *  Metodo para validar los tipos de caracteres de un valor de tipo 'String'
      * 
      * @param prmValue Recibe el valor
@@ -30,7 +38,11 @@ public class JSON  {
     {
         for(int i = 0; i < prmValue.length(); i++){
 
+<<<<<<< HEAD
             if(((prmValue.charAt(i) < 32) || (prmValue.charAt(i) > 126)) && (prmValue.charAt(i) == 0))
+=======
+            if((prmValue.charAt(i) < 32) || (prmValue.charAt(i) > 126))
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
                 return false;
         }
         return true;
@@ -200,6 +212,10 @@ public class JSON  {
     public static JSON parseStringJSON(String prmJSON)
     {
         JSON objJSON = new JSON();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
         String varJSON = prmJSON.replace("{", "")
                                 .replace("}", "")
                                 .replace("\"", "");
@@ -222,7 +238,11 @@ public class JSON  {
      */
     public static ArrayList<JSON> parseStringArrayJSON(String[] prmJSON)
     {
+<<<<<<< HEAD
         String[] arrJSON = prmJSON.clone();
+=======
+        String [] arrJSON = prmJSON.clone();
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
         ArrayList<JSON> arrObjJsons = new ArrayList<>();
 
         arrJSON[0] = arrJSON[0].replace("[", "");

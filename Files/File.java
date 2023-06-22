@@ -36,9 +36,14 @@ public class File {
         try{
 
             atrFileOutput = new FileOutputStream(atrPath+"\\"+prmFileName+".txt");
+<<<<<<< HEAD
             String[] varContent = prmContent.clone();
 
             for(String str: varContent){
+=======
+
+            for(String str: prmContent){
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
                 str = str.concat("\n");
                 atrFileOutput.write(str.getBytes(StandardCharsets.UTF_8));
             }
@@ -66,6 +71,7 @@ public class File {
             byte[] arrBytes = atrFileInput.readAllBytes();
             atrFileInput.close();
             
+<<<<<<< HEAD
             if(arrBytes.length > 0){
                 
                 byte[][] mtrBytes = Byte.splitln(arrBytes);
@@ -90,5 +96,28 @@ public class File {
             Console.printMessage("No se puede importar el archivo!");
         }
         return null;
+=======
+            byte[][] mtrBytes = Byte.splitln(arrBytes);
+            String[] arrRows;
+
+            if(mtrBytes != null){
+
+                int varSize = mtrBytes.length;
+                arrRows = new String[varSize];
+
+                for(int i = 0; i < varSize; i++)
+                    arrRows[i] = Byte.parseByteToString(mtrBytes[i]);
+            }else{
+                arrRows = new String[1];
+                arrRows[0] = Byte.parseByteToString(arrBytes).replace("\n", "");
+            }
+        
+            return arrRows;
+
+        }catch(IOException e){
+            Console.printMessage("No se puede importar el archivo!");
+            return null;
+        }
+>>>>>>> 030e341605c8ada231576851b84e23852782cece
     }
 }
