@@ -238,11 +238,7 @@ public class JSON  {
      */
     public static ArrayList<JSON> parseStringArrayJSON(String[] prmJSON)
     {
-<<<<<<< HEAD
         String[] arrJSON = prmJSON.clone();
-=======
-        String [] arrJSON = prmJSON.clone();
->>>>>>> 030e341605c8ada231576851b84e23852782cece
         ArrayList<JSON> arrObjJsons = new ArrayList<>();
 
         arrJSON[0] = arrJSON[0].replace("[", "");

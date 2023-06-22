@@ -36,14 +36,9 @@ public class File {
         try{
 
             atrFileOutput = new FileOutputStream(atrPath+"\\"+prmFileName+".txt");
-<<<<<<< HEAD
             String[] varContent = prmContent.clone();
 
             for(String str: varContent){
-=======
-
-            for(String str: prmContent){
->>>>>>> 030e341605c8ada231576851b84e23852782cece
                 str = str.concat("\n");
                 atrFileOutput.write(str.getBytes(StandardCharsets.UTF_8));
             }
