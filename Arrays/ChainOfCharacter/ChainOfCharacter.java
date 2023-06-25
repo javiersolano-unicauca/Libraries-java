@@ -4,6 +4,23 @@ package Libraries.Arrays.ChainOfCharacter;
  * @author javiersolanop
  */
 public class ChainOfCharacter {
+
+    /**
+     *  Metodo para validar si la candena contiene solamente letras
+     * 
+     * @param prmChain Recibe la cadena
+     * @return 'true' si solo contiene letras. 'false' si no.
+     */
+    public static boolean containsLetters(String prmChain)
+    {
+        for(int i = 0; i < prmChain.length(); i++){
+            
+            if(((prmChain.charAt(i) < 'A') && (prmChain.charAt(i) > 'Z')) &&
+                ((prmChain.charAt(i) < 'a') && (prmChain.charAt(i) > 'z')))
+                return false;
+        }
+        return true;
+    }
     
     /**
      *  Metodo para validar si la cadena es un numero real
