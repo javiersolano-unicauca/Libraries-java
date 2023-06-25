@@ -15,12 +15,12 @@ public class ChainOfCharacter {
     {
         for(int i = 0; i < prmChain.length(); i++){
             
-            if(((prmChain.charAt(i) < 'A') && (prmChain.charAt(i) > 'Z')) &&
-                ((prmChain.charAt(i) < 'a') && (prmChain.charAt(i) > 'z')))
-                return false;
+            if(((prmChain.charAt(i) < 'A') || (prmChain.charAt(i) > 'Z')) &&
+              ((prmChain.charAt(i) < 'a') || (prmChain.charAt(i) > 'z')) &&
+              (prmChain.charAt(i) != ' '))
+                    return false;
         }
         return true;
-    }
     
     /**
      *  Metodo para validar si la cadena es un numero real
