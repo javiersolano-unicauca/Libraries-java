@@ -37,7 +37,7 @@ public class Stack<T> {
     public void stackUp(T prmValue)
     {
         Node<T> objNode = new Node<>();
-        objNode.setNode(atrLast);
+        objNode.setNext(atrLast);
         objNode.setValue(prmValue);
 
         atrLast = objNode;
@@ -48,7 +48,7 @@ public class Stack<T> {
     {
         if(!isEmpty())
         {
-            atrLast = atrLast.getNode();
+            atrLast = atrLast.getNext();
             atrSize--;
             return true;
         }
@@ -60,7 +60,7 @@ public class Stack<T> {
         if(prmNode != null)
         {
             Console.printMessage(prmMessage+prmNode.getValue());
-            printElement(prmNode.getNode(), prmMessage);
+            printElement(prmNode.getNext(), prmMessage);
         }
     }
 

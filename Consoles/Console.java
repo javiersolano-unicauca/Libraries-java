@@ -1,8 +1,10 @@
-package Libraries.Consoles;
+// package Libraries.Consoles;
+package Consoles;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Libraries.Exceptions.MathException;
+// import Libraries.Exceptions.MathException;
+import Exceptions.MathException;
 
 /**
 *  @author javiersolanop
@@ -15,6 +17,11 @@ public class Console {
      *  @param prmChain Recibe la cadena.
      */
     public static void println(String prmChain)
+    {
+        System.out.println(prmChain);
+    }
+
+    public static void println(Object prmChain)
     {
         System.out.println(prmChain);
     }

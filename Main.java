@@ -1,27 +1,19 @@
 import Arrays.Queue.Queue;
+import Arrays.SimpleList.SimpleList;
 
 public class Main {
     
     public static void main(String[] args) {
         
-        Queue<Integer> objQueue = new Queue<>();
-
-        objQueue.push(1);
-        objQueue.push(2);
-        objQueue.push(3);
-        objQueue.push(4);
-        objQueue.push(5);
-
-        objQueue.delete();
-        System.out.println("Primer elemento: "+objQueue.getFirst());
-        System.out.println("Ultimo elemento: "+objQueue.getLast());
-        objQueue.printQueue("Elemento: ");
-
-
-        // System.out.println("Ultimo elemento: "+objQueue.getLast());
-
-        // objQueue.printQueue("Elemento: ");
-        Arrays.Queue.Node<Integer> obj =  objQueue.getFirstNode();
-        // System.out.println(obj.getNext().getNext().getValue());
+        SimpleList<Integer> objSimpleList = new SimpleList<>();
+        objSimpleList.add(1);
+        objSimpleList.add(2);
+        objSimpleList.add(3);
+        objSimpleList.add(4);
+        objSimpleList.printList();
+        System.out.println();
+        System.out.println(objSimpleList.delete(3));
+        System.out.println();
+        objSimpleList.printList();
     }
 }

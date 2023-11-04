@@ -1,4 +1,4 @@
-package Libraries.Arrays.Stack;
+package Arrays.SimpleList;
 
 public class Node<T> {
     
@@ -10,7 +10,19 @@ public class Node<T> {
         atrNext = null;
         atrValue = null;
     }
+
+    public Node(T prmValor)
+    {
+        atrNext = null;
+        atrValue = prmValor;
+    }
     
+    public Node(Node<T> prmNext, T prmValor)
+    {
+        atrNext = prmNext;
+        atrValue = prmValor;
+    }
+
     public Node<T> getNext()
     {
         return atrNext;
