@@ -1,6 +1,7 @@
-package Libraries.Arrays.Stack;
+// package Libraries.Arrays.Stack;
 
-import Libraries.Consoles.Console;
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 public class Stack<T> {
     
@@ -11,6 +12,11 @@ public class Stack<T> {
     {
         atrLast = null;
         atrSize = 0;
+    }
+
+    public int size()
+    {
+        return atrSize;
     }
 
     public boolean isEmpty()
