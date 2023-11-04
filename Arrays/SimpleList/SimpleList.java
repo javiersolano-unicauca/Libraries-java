@@ -1,7 +1,9 @@
-package Arrays.SimpleList;
+package Libraries.Arrays.SimpleList;
+// package Arrays.SimpleList;
 
 import Arrays.SimpleList.Node;
-import Consoles.Console;
+import Libraries.Consoles.Console;
+// import Consoles.Console;
 
 public class SimpleList<T> {
 

@@ -1,10 +1,10 @@
-// package Libraries.Consoles;
-package Consoles;
+package Libraries.Consoles;
+// package Consoles;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// import Libraries.Exceptions.MathException;
-import Exceptions.MathException;
+import Libraries.Exceptions.MathException;
+// import Exceptions.MathException;
 
 /**
 *  @author javiersolanop
@@ -21,9 +21,14 @@ public class Console {
         System.out.println(prmChain);
     }
 
-    public static void println(Object prmChain)
+    /**
+     *  Metodo para imprimir un objeto en consola.
+     * 
+     *  @param prmObject Recibe el objeto.
+     */
+    public static void println(Object prmObject)
     {
-        System.out.println(prmChain);
+        System.out.println(prmObject);
     }
 
     /**
