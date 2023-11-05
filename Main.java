@@ -12,7 +12,7 @@ public class Main {
         objSimpleList.add(4);
         objSimpleList.printList();
         System.out.println();
-        System.out.println(objSimpleList.delete(3));
+        System.out.println(objSimpleList.delete(4));
         System.out.println();
         objSimpleList.printList();
     }

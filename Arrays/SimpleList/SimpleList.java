@@ -48,7 +48,7 @@ public class SimpleList<T> {
                 prmNode.setNext(prmNode.getNext().getNext());
                 return true;
             }
-            deleteElement(prmNode.getNext(), prmElement);
+            return deleteElement(prmNode.getNext(), prmElement);
         }
         return false;
     }
