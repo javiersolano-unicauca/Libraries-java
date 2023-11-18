@@ -1,6 +1,8 @@
-package Libraries.Arrays.Lists;
+// package Libraries.Arrays.Lists;
+package Arrays.Lists;
 
-import Libraries.Consoles.Console;
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 /**
  * @author javiersolanop
@@ -25,6 +27,15 @@ public abstract class MethodOfList<T> {
         {
             prmArray[prmIndex] = prmNode;
             NodeToVector(prmArray, prmNode.getNext(), --prmIndex);
+        }
+    }
+
+    protected void elementToVector(Object[] prmArray, Node<T> prmNode, int prmIndex)
+    {
+        if(prmNode != null)
+        {
+            prmArray[prmIndex] = prmNode.getValue();
+            elementToVector(prmArray, prmNode.getNext(), --prmIndex);
         }
     }
     
@@ -64,6 +75,17 @@ public abstract class MethodOfList<T> {
                 prmNode.setNext(new Node<>(prmElement));
             else
                 insertElementToHead(prmNode.getNext(), prmElement);
+        }
+    }
+
+    protected void updateElement(Node<T> prmNode, T prmValueCurrent, T prmNewValue)
+    {
+        if(prmNode != null)
+        {
+            if(prmNode.getValue().equals(prmValueCurrent))
+                prmNode.setValue(prmNewValue);
+            else
+                updateElement(prmNode.getNext(), prmValueCurrent, prmNewValue);
         }
     }
 

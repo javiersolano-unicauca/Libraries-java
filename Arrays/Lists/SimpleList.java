@@ -1,12 +1,16 @@
-package Libraries.Arrays.Lists;
+// package Libraries.Arrays.Lists;
+package Arrays.Lists;
 
-import Libraries.Consoles.Console;
+import java.util.Iterator;
+
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 /**
  * @author javiersolanop
  * @param <T> Tipo de elemento
  */
-public class SimpleList<T> extends MethodOfList<T>{
+public class SimpleList<T> extends MethodOfList<T> implements Iterable<T> {
 
     private Node<T> atrFirst;
     private Node<T> atrLast;
@@ -17,6 +21,16 @@ public class SimpleList<T> extends MethodOfList<T>{
         atrFirst = null;
         atrLast = null;
         atrSize = 0;
+    }
+
+    public T getFirst()
+    {
+        return atrFirst.getValue();
+    }
+
+    public int size()
+    {
+        return atrSize;
     }
 
     public boolean isEmpty()
@@ -68,6 +82,18 @@ public class SimpleList<T> extends MethodOfList<T>{
                 insertAfterElement(atrLast, prmAfter, prmValue);
                 atrSize++;
             }
+            return true;
+        }
+        return false;
+    }
+
+    public boolean update(T prmValueCurrent, T prmNewValue)
+    {
+        if(find(prmValueCurrent) && !find(prmNewValue))
+        {
+            if(atrFirst.getValue().equals(prmValueCurrent))
+                atrFirst.setValue(prmNewValue);
+            updateElement(atrLast, prmValueCurrent, prmNewValue);
             return true;
         }
         return false;
@@ -138,5 +164,16 @@ public class SimpleList<T> extends MethodOfList<T>{
             NodeToVector(arrNodes, atrLast, (atrSize - 1));
             printElement(arrNodes, "Elemento: ");
         }
+    }
+
+    public void toArray(T[] prmArray)
+    {
+        if(!isEmpty())
+            elementToVector(prmArray, atrLast, (atrSize - 1));
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator<>(atrLast);
     }
 }

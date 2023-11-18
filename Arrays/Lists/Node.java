@@ -1,4 +1,5 @@
-package Libraries.Arrays.Lists;
+// package Libraries.Arrays.Lists;
+package Arrays.Lists;
 
 /**
  * @author javiersolanop

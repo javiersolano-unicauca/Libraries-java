@@ -1,4 +1,5 @@
-package Libraries.Arrays.SuperArray;
+// package Libraries.Arrays.SuperArray;
+package Arrays.SuperArray;
 
 /**
  *  @author javiersolanop

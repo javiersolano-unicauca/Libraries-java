@@ -1,4 +1,5 @@
-package Libraries.Arrays.SuperArray;
+// package Libraries.Arrays.SuperArray;
+package Arrays.SuperArray;
 
 import java.util.ArrayList;
 
@@ -7,13 +8,13 @@ import java.util.ArrayList;
 *  @param K recibe el tipo de clave
 *  @param O recibe el tipo de objeto que almacena
 */
-public class SuperArray<K, O> {
+public class SuperArrayList<K, O> {
 
     // Properties:
     private ArrayList<Element<K, O>> atrObjects;
 
     // Constructors:
-    public SuperArray(){ atrObjects = new ArrayList<>(); }
+    public SuperArrayList(){ atrObjects = new ArrayList<>(); }
     
     /**
      *  Metodo para validar si el arreglo esta vacio.

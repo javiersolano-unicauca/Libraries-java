@@ -1,19 +1,16 @@
-import Arrays.Queue.Queue;
-import Arrays.SimpleList.SimpleList;
+import Arrays.JSON.JSON;
+import Arrays.Lists.SimpleList;
+import Arrays.SuperArray.SuperSimpleList;
 
 public class Main {
     
     public static void main(String[] args) {
         
-        SimpleList<Integer> objSimpleList = new SimpleList<>();
-        objSimpleList.add(1);
-        objSimpleList.add(2);
-        objSimpleList.add(3);
-        objSimpleList.add(4);
-        objSimpleList.printList();
-        System.out.println();
-        System.out.println(objSimpleList.delete(4));
-        System.out.println();
-        objSimpleList.printList();
+        JSON objJson = new JSON();
+        objJson.add("Identificacion", 123456);
+        objJson.add("Nombre", "Javier");
+        objJson.add("Apellido", "Solano");
+
+        System.out.println(objJson.toFormattedString());
     }
 }

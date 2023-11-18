@@ -1,4 +1,5 @@
 package Libraries.Arrays.JSON;
+// package Arrays.JSON;
 
 import java.util.ArrayList;
 
@@ -7,16 +8,21 @@ import Libraries.Arrays.SuperArray.Element;
 import Libraries.Arrays.SuperArray.SuperArray;
 import Libraries.Consoles.Console;
 
+// import Arrays.ChainOfCharacter.ChainOfCharacter;
+// import Arrays.Lists.SimpleList;
+// import Arrays.SuperArray.Element;
+// import Arrays.SuperArray.SuperSimpleList;
+
 /**
 *  @author javiersolanop
 */
 public class JSON  {
     
     // Properties:
-    private SuperArray<String, Object> atrJSON;
+    private SuperSimpleList<String, Object> atrJSON;
 
     // Constructors:
-    public JSON(){ atrJSON = new SuperArray<>(); }
+    public JSON(){ atrJSON = new SuperSimpleList<>(); }
 
     // Methods of object:
     
@@ -126,7 +132,7 @@ public class JSON  {
     @Override
     public String toString()
     {
-        ArrayList<Element<String, Object>> arrJSON = atrJSON.getAll();
+        Element<String, Object>[] arrJSON = atrJSON.getAll();
         int varCount = 1, varSize = atrJSON.size();
         String varJSON = "{";
 
@@ -150,7 +156,7 @@ public class JSON  {
      */
     public String toFormattedString()
     {
-        ArrayList<Element<String, Object>> arrJSON = atrJSON.getAll();
+        Element<String, Object>[] arrJSON = atrJSON.getAll();
         int varCount = 1, varSize = atrJSON.size();
         String varJSON = "{\n";
 
@@ -220,10 +226,10 @@ public class JSON  {
      *  @param prmJSON Recibe el arreglo de String de 'JSON'
      *  @return El arreglo de objetos 
      */
-    public static ArrayList<JSON> parseStringArrayJSON(String[] prmJSON)
+    public static SimpleList<JSON> parseStringSimpleJSON(String[] prmJSON)
     {
         String[] arrJSON = prmJSON.clone();
-        ArrayList<JSON> arrObjJsons = new ArrayList<>();
+        SimpleList<JSON> arrObjJsons = new SimpleList<>();
 
         arrJSON[0] = arrJSON[0].replace("[", "");
         arrJSON[arrJSON.length - 1] = arrJSON[arrJSON.length - 1].replace("]", "");
@@ -232,26 +238,29 @@ public class JSON  {
             arrObjJsons.add(JSON.parseStringJSON(objJson.replace("},", "}")));
         return arrObjJsons;
     }
-
+ 
     /**
      *  Metodo para convertir el arreglo de objetos a de String de 'JSON'
      * 
      *  @param prmJsons Recibe el arreglo de objetos
      *  @return  El arreglo de String de 'JSON'
      */
-    public static String[] toStringArrayJSON(ArrayList<JSON> prmJsons)
+    public static String[] toStringSimpleJSON(SimpleList<JSON> prmJsons)
     {   
-        int varSize = prmJsons.size();
+        int varSize = prmJsons.size(), 
+            varIterador = 0;
+
         String[] arrJson = new String[varSize];
 
-        arrJson[0] = (varSize > 1) ? "["+prmJsons.get(0).toString()+"," : "["+prmJsons.get(0).toString();
+        arrJson[varIterador] = (varSize > 1) ? "["+prmJsons.getFirst().toString()+"," : "["+prmJsons.getFirst().toString();
 
-        for(int i = 1; i < varSize; i++){
+        for (JSON objJson : prmJsons) {
 
-            arrJson[i] = prmJsons.get(i).toString();
+            arrJson[varIterador] = objJson.toString();
 
-            if(i < (varSize - 1))
-                arrJson[i] += ",";
+            if(varIterador < (varSize - 1))
+                arrJson[varIterador] += ",";
+            varIterador++;
         }
 
         arrJson[varSize - 1] += "]";

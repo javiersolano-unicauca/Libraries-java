@@ -1,6 +1,8 @@
-package Libraries.Arrays.Lists;
+// package Libraries.Arrays.Lists;
+package Arrays.Lists;
 
-import Libraries.Consoles.Console;
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 /**
  * @author javiersolanop
@@ -17,6 +19,11 @@ public class CircleSimpleList<T> extends MethodOfList<T> {
         atrFirst = null;
         atrLast = null;
         atrSize = 0;
+    }
+
+    public int size()
+    {
+        return atrSize;
     }
     
     public boolean isEmpty()

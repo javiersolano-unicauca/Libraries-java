@@ -1,10 +1,10 @@
-package Libraries.Consoles;
-// package Consoles;
+// package Libraries.Consoles;
+package Consoles;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Libraries.Exceptions.MathException;
-// import Exceptions.MathException;
+// import Libraries.Exceptions.MathException;
+import Exceptions.MathException;
 
 /**
 *  @author javiersolanop
