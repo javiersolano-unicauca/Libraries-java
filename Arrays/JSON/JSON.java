@@ -248,20 +248,26 @@ public class JSON  {
     public static String[] toStringSimpleJSON(SimpleList<JSON> prmJsons)
     {   
         int varSize = prmJsons.size(), 
-            varIterador = 0;
+        varIterador = varSize - 1;
 
         String[] arrJson = new String[varSize];
 
-        arrJson[varIterador] = (varSize > 1) ? "["+prmJsons.getFirst().toString()+"," : "["+prmJsons.getFirst().toString();
+        if(varSize > 1)
+        {
+            for (JSON objJson : prmJsons) {
 
-        for (JSON objJson : prmJsons) {
+                if(varIterador == 0)
+                    arrJson[varIterador] = "["+objJson.toString();
+                else
+                    arrJson[varIterador] = objJson.toString();
 
-            arrJson[varIterador] = objJson.toString();
-
-            if(varIterador < (varSize - 1))
-                arrJson[varIterador] += ",";
-            varIterador++;
-        }
+                if(varIterador < (varSize - 1))
+                    arrJson[varIterador] += ",";
+                varIterador--;
+            }
+        }    
+        else
+            arrJson[0] = "["+prmJsons.getFirst().toString();
 
         arrJson[varSize - 1] += "]";
         return arrJson;
