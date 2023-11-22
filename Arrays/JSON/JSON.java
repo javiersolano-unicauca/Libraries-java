@@ -247,29 +247,34 @@ public class JSON  {
      */
     public static String[] toStringSimpleJSON(SimpleList<JSON> prmJsons)
     {   
-        int varSize = prmJsons.size(), 
-        varIterador = varSize - 1;
-
-        String[] arrJson = new String[varSize];
-
-        if(varSize > 1)
+        String[] arrJson = {};
+                
+        if(!prmJsons.isEmpty())
         {
-            for (JSON objJson : prmJsons) {
+            int varSize = prmJsons.size(), 
+            varIterador = varSize - 1;
 
-                if(varIterador == 0)
-                    arrJson[varIterador] = "["+objJson.toString();
-                else
-                    arrJson[varIterador] = objJson.toString();
+            arrJson = new String[varSize];
 
-                if(varIterador < (varSize - 1))
-                    arrJson[varIterador] += ",";
-                varIterador--;
-            }
-        }    
-        else
-            arrJson[0] = "["+prmJsons.getFirst().toString();
+            if(varSize > 1)
+            {
+                for (JSON objJson : prmJsons) {
 
-        arrJson[varSize - 1] += "]";
+                    if(varIterador == 0)
+                        arrJson[varIterador] = "["+objJson.toString();
+                    else
+                        arrJson[varIterador] = objJson.toString();
+
+                    if(varIterador < (varSize - 1))
+                        arrJson[varIterador] += ",";
+                    varIterador--;
+                }
+            }    
+            else
+                arrJson[0] = "["+prmJsons.getFirst().toString();
+
+            arrJson[varSize - 1] += "]";
+        }
         return arrJson;
     }
 }
