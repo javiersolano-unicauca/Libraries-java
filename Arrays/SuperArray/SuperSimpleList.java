@@ -1,6 +1,6 @@
-package Arrays.SuperArray;
+package Libraries.Arrays.SuperArray;
 
-import Arrays.Lists.SimpleList;
+import Libraries.Arrays.Lists.SimpleList;
 
 /**
 *  @author javiersolanop

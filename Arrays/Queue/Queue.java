@@ -1,7 +1,6 @@
-package Arrays.Queue;
+package Libraries.Arrays.Queue;
 
 import Arrays.Queue.Node;
-import Consoles.Console;
 
 public class Queue<T> {
     

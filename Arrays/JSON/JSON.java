@@ -1,17 +1,9 @@
 package Libraries.Arrays.JSON;
-// package Arrays.JSON;
-
-import java.util.ArrayList;
 
 import Libraries.Arrays.ChainOfCharacter.ChainOfCharacter;
+import Libraries.Arrays.Lists.SimpleList;
 import Libraries.Arrays.SuperArray.Element;
-import Libraries.Arrays.SuperArray.SuperArray;
-import Libraries.Consoles.Console;
-
-// import Arrays.ChainOfCharacter.ChainOfCharacter;
-// import Arrays.Lists.SimpleList;
-// import Arrays.SuperArray.Element;
-// import Arrays.SuperArray.SuperSimpleList;
+import Libraries.Arrays.SuperArray.SuperSimpleList;
 
 /**
 *  @author javiersolanop
@@ -19,7 +11,7 @@ import Libraries.Consoles.Console;
 public class JSON  {
     
     // Properties:
-    private SuperSimpleList<String, Object> atrJSON;
+    private final SuperSimpleList<String, Object> atrJSON;
 
     // Constructors:
     public JSON(){ atrJSON = new SuperSimpleList<>(); }

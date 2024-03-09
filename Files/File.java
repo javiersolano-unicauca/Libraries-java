@@ -1,6 +1,7 @@
 package Libraries.Files;
 
 import Libraries.Consoles.Console;
+import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

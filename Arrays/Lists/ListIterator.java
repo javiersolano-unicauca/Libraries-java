@@ -1,4 +1,4 @@
-package Arrays.Lists;
+package Libraries.Arrays.Lists;
 
 import java.util.Iterator;
 

@@ -1,5 +1,5 @@
-// package Libraries.Arrays.SuperArray;
-package Arrays.SuperArray;
+ package Libraries.Arrays.SuperArray;
+//package Arrays.SuperArray;
 
 import java.util.ArrayList;
 

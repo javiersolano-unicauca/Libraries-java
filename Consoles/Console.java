@@ -1,10 +1,8 @@
-// package Libraries.Consoles;
-package Consoles;
+package Libraries.Consoles;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// import Libraries.Exceptions.MathException;
-import Exceptions.MathException;
+import Libraries.Exceptions.MathException;
 
 /**
 *  @author javiersolanop
@@ -93,6 +91,26 @@ public class Console {
             return objScanner.nextInt();
         }catch(InputMismatchException e){
             throw new MathException(MathException.NOT_INTEGER);
+        }
+    }
+    
+    /**
+     *  Metodo para recibir entradas de tipo float por consola.
+     * 
+     *  @param prmDescription Recibe la descripcion de la entrada que se solicita.
+     * 
+     *  @return La entrada ingresada por el usuario.
+     *  @throws MathException En el caso de que el dato ingresado por el usuario no corresponde a un numero real
+     */
+    public static float floatInput(String prmDescription) throws MathException
+    {
+        printMessage(prmDescription+":");
+        Scanner objScanner = new Scanner(System.in);
+
+        try{
+            return objScanner.nextFloat();
+        }catch(InputMismatchException e){
+            throw new MathException(MathException.NOT_DOUBLE);
         }
     }
 

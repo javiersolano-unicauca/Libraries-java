@@ -1,7 +1,6 @@
-// package Libraries.Arrays.Stack;
+ package Libraries.Arrays.Stack;
 
-// import Libraries.Consoles.Console;
-import Consoles.Console;
+ import Libraries.Consoles.Console;
 
 public class Stack<T> {
     

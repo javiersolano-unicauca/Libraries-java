@@ -1,10 +1,8 @@
-// package Libraries.Arrays.Lists;
-package Arrays.Lists;
+package Libraries.Arrays.Lists;
 
 import java.util.Iterator;
 
-// import Libraries.Consoles.Console;
-import Consoles.Console;
+ import Libraries.Consoles.Console;
 
 /**
  * @author javiersolanop
@@ -26,6 +24,11 @@ public class SimpleList<T> extends MethodOfList<T> implements Iterable<T> {
     public T getFirst()
     {
         return atrFirst.getValue();
+    }
+    
+    public T getLast()
+    {
+        return atrLast.getValue();
     }
 
     public int size()

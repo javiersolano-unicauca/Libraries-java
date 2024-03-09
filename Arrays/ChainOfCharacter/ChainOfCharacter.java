@@ -21,6 +21,7 @@ public class ChainOfCharacter {
                     return false;
         }
         return true;
+    }
     
     /**
      *  Metodo para validar si la cadena es un numero real

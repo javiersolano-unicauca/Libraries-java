@@ -1,8 +1,6 @@
-// package Libraries.Arrays.Lists;
-package Arrays.Lists;
+ package Libraries.Arrays.Lists;
 
-// import Libraries.Consoles.Console;
-import Consoles.Console;
+ import Libraries.Consoles.Console;
 
 /**
  * @author javiersolanop
