@@ -1,4 +1,4 @@
-package main.java.Libraries.Trees;
+package Libraries.Trees;
 
 /**
  * @author javiersolanop

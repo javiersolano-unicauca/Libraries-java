@@ -1,15 +1,15 @@
-package main.java.Libraries.Trees;
+package Libraries.Trees;
 
 import Libraries.Consoles.Console;
 
 /**
  * @author javiersolanop
  */
-public class TreeOfEnteger extends Tree<Integer> {
+public class TreeOfInteger extends Tree<Integer> {
 
     // Constructors:
 
-    public TreeOfEnteger()
+    public TreeOfInteger()
     {
         super();
     }
