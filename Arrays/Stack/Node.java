@@ -1,4 +1,5 @@
-package Libraries.Arrays.Stack;
+// package Libraries.Arrays.Stack;
+package Arrays.Stack;
 
 public class Node<T> {
     

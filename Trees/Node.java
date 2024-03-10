@@ -1,4 +1,5 @@
-package Libraries.Trees;
+// package Libraries.Trees;
+package Trees;
 
 /**
  * @author javiersolanop
@@ -64,5 +65,17 @@ public class Node<Type> {
     public void setRight(Node<Type> prmRight)
     {
         atrRight = prmRight;
+    }
+
+    // Methods:
+
+    /**
+     *  Metodo para validar si el nodo esta vacio
+     * 
+     *  @return 'true' si esta vacio. 'false' si no
+     */
+    public boolean isEmpty()
+    {
+        return (atrValue == null);
     }
 }

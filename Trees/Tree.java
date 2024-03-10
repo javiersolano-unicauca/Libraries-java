@@ -1,6 +1,9 @@
-package Libraries.Trees;
+// package Libraries.Trees;
+package Trees;
 
-import Libraries.Consoles.Console;
+import Arrays.Stack.Stack;
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 /**
  * @author javiersolanop
@@ -66,6 +69,16 @@ public abstract class Tree<Type> {
     }
 
     // Methods:
+
+    /**
+     *  Metodo para validar si el arbol esta vacio
+     * 
+     *  @return 'true' si esta vacio. 'false' si no
+     */
+    public boolean isEmpty()
+    {
+        return atrRoot.isEmpty();
+    }
 
     /**
      * Metodo para insertar un valor en el arbol

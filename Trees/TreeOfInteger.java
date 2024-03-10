@@ -1,6 +1,8 @@
-package Libraries.Trees;
+// package Libraries.Trees;
+package Trees;
 
-import Libraries.Consoles.Console;
+// import Libraries.Consoles.Console;
+import Consoles.Console;
 
 /**
  * @author javiersolanop
